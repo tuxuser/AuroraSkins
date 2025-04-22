@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuroraSkins Uploader</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AuroraSkins Uploader</h1>
+            <p>Upload Aurora Skin to GitHub via Pull Request</p>
+        </header>
+
+        <main>
+            <div id="auth-section" class="section">
+                <button id="login-button" class="button">Login with GitHub</button>
+            </div>
+
+            <div id="upload-section" class="section hidden">
+                <div class="tabs">
+                    <button class="tab-button active" data-tab="background">Background</button>
+                    <button class="tab-button" data-tab="coverflow">Coverflow</button>
+                    <button class="tab-button" data-tab="skin">Skin</button>
+                </div>
+
+                <div class="tab-content">
+                    <!-- Background Tab -->
+                    <div id="background" class="tab-pane active">
+                        <div class="form-group">
+                            <label for="background-name">Name:</label>
+                            <input type="text" id="background-name" class="text-input" placeholder="Enter background name">
+                        </div>
+                        <div class="form-group">
+                            <label for="background-author">Author:</label>
+                            <input type="text" id="background-author" class="text-input" placeholder="Enter author name">
+                        </div>
+                        <div class="form-group">
+                            <label for="background-image">Image File (max 30MB):</label>
+                            <input type="file" id="background-image" class="file-input" accept="image/*" data-max-size="31457280">
+                            <div class="file-size-info">Maximum file size: 30MB</div>
+                        </div>
+                    </div>
+
+                    <!-- Coverflow Tab -->
+                    <div id="coverflow" class="tab-pane">
+                        <div class="form-group">
+                            <label for="coverflow-name">Name:</label>
+                            <input type="text" id="coverflow-name" class="text-input" placeholder="Enter coverflow name">
+                        </div>
+                        <div class="form-group">
+                            <label for="coverflow-author">Author:</label>
+                            <input type="text" id="coverflow-author" class="text-input" placeholder="Enter author name">
+                        </div>
+                        <div class="form-group">
+                            <label for="coverflow-website">Website Source:</label>
+                            <input type="text" id="coverflow-website" class="text-input" placeholder="Enter website URL">
+                        </div>
+                        <div class="form-group">
+                            <label for="coverflow-screenshot">Screenshot (JPEG, max 3MB):</label>
+                            <input type="file" id="coverflow-screenshot" class="file-input" accept="image/jpeg" data-max-size="3145728">
+                            <div class="file-size-info">Maximum file size: 3MB</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="coverflow-file">File (max 512KB):</label>
+                            <input type="file" id="coverflow-file" class="file-input" accept=".cfljson" data-max-size="524288">
+                            <div class="file-size-info">Maximum file size: 512KB</div>
+                        </div>
+                    </div>
+
+                    <!-- Skin Tab -->
+                    <div id="skin" class="tab-pane">
+                        <div class="form-group">
+                            <label for="skin-name">Name:</label>
+                            <input type="text" id="skin-name" class="text-input" placeholder="Enter skin name">
+                        </div>
+                        <div class="form-group">
+                            <label for="skin-author">Author:</label>
+                            <input type="text" id="skin-author" class="text-input" placeholder="Enter author name">
+                        </div>
+                        <div class="form-group">
+                            <label for="skin-website">Website Source:</label>
+                            <input type="text" id="skin-website" class="text-input" placeholder="Enter website URL">
+                        </div>
+                        <div class="form-group">
+                            <label for="skin-screenshot">Screenshot (JPEG, max 3MB):</label>
+                            <input type="file" id="skin-screenshot" class="file-input" accept="image/jpeg" data-max-size="3145728">
+                            <div class="file-size-info">Maximum file size: 3MB</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="skin-file">File (max 100MB):</label>
+                            <input type="file" id="skin-file" class="file-input" accept=".xzp" data-max-size="104857600">
+                            <div class="file-size-info">Maximum file size: 100MB</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="create-pr-button" class="button">Create Pull Request</button>
+            </div>
+
+            <div id="status-section" class="section hidden">
+                <div id="status-message"></div>
+            </div>
+
+            <div id="faq-section" class="section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-content">
+                    <h3>How can I upload content?</h3>
+                    <p>Use the form above to upload your content. For skins or coverflows, provide the official forum link and a screenshot.</p>
+
+                    <h3>I've uploaded content and it won't appear, how is it?</h3>
+                    <p>The content is approved within 12-72 hours where the admin checks that the files and the source website are valid.</p>
+
+                    <h3>It has passed more than 72 hours since I uploaded the file, what happened?</h3>
+                    <p>Maybe the file you supplied doesn't work, the URL you give isn't from a forum, or it's inappropriate. Contact the admin to consult why it hasn't been approved yet.</p>
+
+                    <h3>The script showed me an error / The script won't work for me. What can I do?</h3>
+                    <p>First of all, update the script if possible. If it keeps failing, contact the admin with the debug.log file from your Aurora folder.</p>
+                </div>
+            </div>
+
+            <div id="info-section" class="section">
+                <h2>Information</h2>
+                <p>This uploader allows you to submit content for Aurora 0.6b and above. You're free to download and try this software. Any comments or suggestions to improve this software are welcome.</p>
+                <p>If you are a developer, upload your plugin giving a screenshot and a URL where we can prove that it's the correct author. The uploaded content will be available soon as we can prove that it works for Aurora 0.6b and above and if the given data is correct.</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>Scripts and website made by Dan Martí and updated by tuxuser. Hosting provided by GitHub.</p>
+            <p>These scripts are given freely, and if you share them, make sure to include this website please.</p>
+            <p>We are not affiliated in any way with the DevTeam of Aurora.</p>
+        </footer>
+    </div>
+</body>
+</html> 

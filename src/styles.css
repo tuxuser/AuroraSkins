@@ -1,0 +1,161 @@
+:root {
+    --primary-color: #2ea44f;
+    --primary-hover: #2c974b;
+    --background-color: #f6f8fa;
+    --border-color: #e1e4e8;
+    --text-color: #24292e;
+    --tab-active-bg: #ffffff;
+    --tab-inactive-bg: #f1f1f1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.section {
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.tab-button {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px 4px 0 0;
+    background: var(--tab-inactive-bg);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.tab-button:hover {
+    background: var(--tab-active-bg);
+}
+
+.tab-button.active {
+    background: var(--tab-active-bg);
+    border-bottom-color: var(--tab-active-bg);
+    margin-bottom: -1px;
+}
+
+.tab-content {
+    position: relative;
+}
+
+.tab-pane {
+    display: none;
+    padding: 1rem 0;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.text-input, .file-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+textarea.text-input {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.file-size-info {
+    font-size: 0.875rem;
+    color: #666;
+    margin-top: 0.25rem;
+}
+
+.button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: var(--primary-hover);
+}
+
+#status-message {
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+
+#status-message.success {
+    background-color: #e6ffed;
+    border: 1px solid #2ea44f;
+    color: #2ea44f;
+}
+
+#status-message.error {
+    background-color: #ffeef0;
+    border: 1px solid #cb2431;
+    color: #cb2431;
+}
+
+#status-message.info {
+    background-color: #f1f8ff;
+    border: 1px solid #0366d6;
+    color: #0366d6;
+} 
