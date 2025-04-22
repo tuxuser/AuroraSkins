@@ -28,7 +28,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: repo/
       - id: deployment
         if: github.ref_name == 'main'
         uses: actions/deploy-pages@v4
