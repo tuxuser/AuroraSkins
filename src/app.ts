@@ -3,7 +3,7 @@ import './styles.css';
 
 // GitHub OAuth configuration
 const GITHUB_CLIENT_ID = 'Ov23liuRieBx1l01duUQ';
-const GITHUB_REDIRECT_URI = window.location.origin;
+const GITHUB_REDIRECT_URI = window.location;
 const GITHUB_SCOPE = 'repo';
 const GITHUB_REPO_OWNER = 'tuxuser';
 const GITHUB_REPO_NAME = 'AuroraSkins';
